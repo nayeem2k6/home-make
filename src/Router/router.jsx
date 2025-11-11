@@ -46,7 +46,7 @@ const router = createBrowserRouter ([
             {
                 path:'/my',
                 Component:MyProperties,
-                loader: () => fetch('http://localhost:3000/Homes/${id}')
+                loader: () => fetch('http://localhost:3000/users')
             
             }
            
