@@ -16,8 +16,11 @@ const router = createBrowserRouter ([
            Component:HomeLayout,
            children: [
             {
-                
+                path:'/',
+                Component:Home,
+                loader: () => fetch('http://localhost:3000/latest-homes')  
             },
+            
             {
                 path:'/login',
                 Component:Login
@@ -35,12 +38,6 @@ const router = createBrowserRouter ([
                 path:'/all',
                 Component:AllProperties,
                 loader: ()=> fetch('http://localhost:3000/Homes')
-            },
-        
-            {
-                path:'/home',
-                Component:Home,
-                loader: () => fetch('http://localhost:3000/latest-homes')
             },
             {
                 path:'/view/:id',

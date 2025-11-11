@@ -52,7 +52,7 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 z-[999] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <NavLink
-              to="/home"
+              to="/"
               className={({ isActive }) =>
                 isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
               }
@@ -103,7 +103,7 @@ export default function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <NavLink
-            to="/home"
+            to="/"
             className={({ isActive }) =>
               isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
             }
