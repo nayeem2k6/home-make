@@ -4,7 +4,7 @@ import { useAuth } from '../Context/AuthProvider';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const MyProperties = () => {
+const MyProperties= () => {
     const data = useLoaderData()
     console.log(data)
 
@@ -13,7 +13,7 @@ const MyProperties = () => {
 
   const fetchProperties = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/Homes`)
+      const res = await axios.get(`http://localhost:3000/Homes/{id}`)
       const userProps = res.data.filter(p => p.userEmail === user.email)
       setProperties(userProps)
     } catch(err) { toast.error(err.message) }
@@ -24,7 +24,7 @@ const MyProperties = () => {
   const handleDelete = async id => {
     if (!window.confirm("Are you sure?")) return
     try {
-      await axios.delete(`http://localhost:5000/api/properties/${id}`)
+      await axios.delete(`http://localhost:3000/Homes/${id}`)
       setProperties(properties.filter(p => p._id !== id))
       toast.success("Property Deleted")
     } catch(err) { toast.error(err.message) }
