@@ -1,25 +1,80 @@
-import { useLoaderData } from "react-router"
+
+
+import { Link, useLoaderData } from "react-router";
+
 
 
 
 export default function MyProperties() {
-
-
-  const Data = useLoaderData()
-  console.log(Data)
-
+  const properties = useLoaderData(); // Loader থেকে আসা ডেটা
   
+  const handleDelete = () => {
+    const confirmDelete = window.confirm("Are you sure you want to delete?");
+    if (confirmDelete) {
+      // এখানে তুমি delete API কল করতে পারো
+      alert("Property deleted successfully!");
+    }
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mb-6">My Properties</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="min-h-screen bg-gray-50 py-10 px-5">
+      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
+        My Properties
+      </h1>
 
+      {properties.length === 0 ? (
+        <p className="text-center text-gray-600">No properties found.</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {properties.map((property) => (
+            <div
+              key={property._id}
+              className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
+            >
+              <img
+                src={property.image}
+                alt={property.name}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-5 space-y-2">
+                <h2 className="text-xl font-semibold text-gray-800">
+                  {property.name}
+                </h2>
+                <p className="text-gray-600 text-sm">{property.category}</p>
+                <p className="text-gray-700 font-bold">
+                  ৳ {property.price}
+                </p>
+                <p className="text-gray-500 text-sm">{property.location}</p>
+                <p className="text-gray-400 text-xs">
+                  Posted: {new Date(property.postedAt || Date.now()).toLocaleDateString()}
+                </p>
 
-       <div>
-
+                <div className="flex justify-between mt-3">
+                  <Link
+                    to={`/update/${property._id}`}
+                    className="px-3 py-1 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                  >
+                    Update
+                  </Link>
+                  <button
+                    onClick={() => handleDelete(property._id)}
+                    className="px-3 py-1 text-sm bg-red-500 text-white rounded-lg hover:bg-red-600"
+                  >
+                    Delete
+                  </button>
+                  <Link
+                    to={`/property/${property._id}`}
+                    className="px-3 py-1 text-sm bg-green-500 text-white rounded-lg hover:bg-green-600"
+                  >
+                    View
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        
-      </div>
+      )}
     </div>
-  )
+  );
 }
+

@@ -8,6 +8,8 @@ import AllProperties from "../Pages/AllProperties";
 import Home from "../Pages/Home";
 import PropertyDetails from "../Pages/PropertyDetails";
 import MyProperties from "../Pages/MyProperties"
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+
 
 const router = createBrowserRouter ([
     
@@ -31,7 +33,7 @@ const router = createBrowserRouter ([
             },
             {
                 path:'/Properties',
-                Component:AddProperty,
+                element:<PrivateRoute><AddProperty></AddProperty></PrivateRoute>
                 
             },
             {
