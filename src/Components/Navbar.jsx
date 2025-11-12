@@ -76,7 +76,7 @@ export default function Navbar() {
               Add Properties
             </NavLink>
             <NavLink
-              to="/profile"
+              to="/my"
               className={({ isActive }) =>
                 isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
               }

@@ -1,6 +1,7 @@
 
 import { Link, useLoaderData } from "react-router";
 import HomeCard from "../Components/HomeCard";
+import { FaCheckCircle, FaComments, FaFilter } from "react-icons/fa";
 
 
 
@@ -101,7 +102,7 @@ const Home = () => {
           🏡 Featured Real Estates
         </h2>
          
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-4 md:px-10">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  px-4 md:px-10">
 
          {
             
@@ -115,25 +116,36 @@ const Home = () => {
       </section>
 
 
-      <section className="bg-gray-100 py-16 px-6 md:px-12">
-        <h2 className="text-3xl font-bold text-center mb-8">
-          💎 Why Choose HomeNest?
+
+
+       <section className="bg-gradient-to-b from-blue-50 to-white py-20 px-6 md:px-12">
+        <h2 className="text-4xl font-extrabold text-center mb-14 text-gray-800">
+          💎 Why Choose <span className="text-blue-600">HomeNest?</span>
         </h2>
-        <div className="grid md:grid-cols-3 gap-8 text-center">
-          <div className="p-6 bg-white rounded-xl shadow">
-            <h3 className="font-bold text-xl mb-2">Verified Listings</h3>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
+          {/* Card 1 */}
+          <div className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+            <FaCheckCircle className="text-blue-600 text-5xl mx-auto mb-4" />
+            <h3 className="font-bold text-2xl mb-3">Verified Listings</h3>
             <p className="text-gray-600">
               Every property is verified for authenticity and safety before it’s listed.
             </p>
           </div>
-          <div className="p-6 bg-white rounded-xl shadow">
-            <h3 className="font-bold text-xl mb-2">Easy Communication</h3>
+
+          {/* Card 2 */}
+          <div className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+            <FaComments className="text-blue-600 text-5xl mx-auto mb-4" />
+            <h3 className="font-bold text-2xl mb-3">Easy Communication</h3>
             <p className="text-gray-600">
               Directly connect with property owners and make hassle-free deals.
             </p>
           </div>
-          <div className="p-6 bg-white rounded-xl shadow">
-            <h3 className="font-bold text-xl mb-2">Smart Filtering</h3>
+
+          {/* Card 3 */}
+          <div className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+            <FaFilter className="text-blue-600 text-5xl mx-auto mb-4" />
+            <h3 className="font-bold text-2xl mb-3">Smart Filtering</h3>
             <p className="text-gray-600">
               Search by location, price, or category to find exactly what you need.
             </p>
@@ -141,48 +153,57 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ========== Extra Section 1: Testimonials ========== */}
-      <section className="py-16 px-6 md:px-12 bg-white">
-        <h2 className="text-3xl font-bold text-center mb-8">
+      {/* ========== Testimonials Section ========== */}
+      <section className="py-20 px-6 md:px-12 bg-white">
+        <h2 className="text-4xl font-extrabold text-center mb-14 text-gray-800">
           💬 What Our Users Say
         </h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 bg-gray-50 rounded-xl shadow">
-            <p className="italic">
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Testimonial 1 */}
+          <div className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+            <p className="italic text-gray-700 text-lg leading-relaxed">
               “Found my dream apartment in just 2 days! Great experience.”
             </p>
-            <p className="mt-3 font-semibold">– Rakib, Dhaka</p>
+            <p className="mt-4 font-semibold text-blue-600">– Rakib, Dhaka</p>
           </div>
-          <div className="p-6 bg-gray-50 rounded-xl shadow">
-            <p className="italic">
+
+          {/* Testimonial 2 */}
+          <div className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+            <p className="italic text-gray-700 text-lg leading-relaxed">
               “User-friendly website and responsive owners. Highly recommended!”
             </p>
-            <p className="mt-3 font-semibold">– Maria, Banani</p>
+            <p className="mt-4 font-semibold text-blue-600">– Maria, Banani</p>
           </div>
-          <div className="p-6 bg-gray-50 rounded-xl shadow">
-            <p className="italic">
+
+          {/* Testimonial 3 */}
+          <div className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+            <p className="italic text-gray-700 text-lg leading-relaxed">
               “It made renting so much simpler. Loved the platform.”
             </p>
-            <p className="mt-3 font-semibold">– Sazzad, Mirpur</p>
+            <p className="mt-4 font-semibold text-blue-600">– Sazzad, Mirpur</p>
           </div>
         </div>
       </section>
 
-
-      <section className="bg-blue-600 text-white py-16 text-center rounded-t-3xl">
-        <h2 className="text-3xl font-bold mb-4">
+      {/* ========== CTA Section ========== */}
+      <section className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-20 text-center rounded-t-3xl">
+        <h2 className="text-4xl font-extrabold mb-4">
           Ready to Find Your Perfect Home?
         </h2>
-        <p className="mb-6 text-lg">
+        <p className="mb-8 text-lg max-w-2xl mx-auto">
           Join thousands of happy users and start your journey with HomeNest today.
         </p>
         <Link
-          to=""
-          className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition"
+          to="/properties"
+          className="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-100 transition"
         >
           Browse Properties
         </Link>
       </section>
+
+
+      
 
 
         </div>
