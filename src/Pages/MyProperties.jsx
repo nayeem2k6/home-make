@@ -6,12 +6,15 @@ import { Link, useLoaderData } from "react-router";
 
 
 export default function MyProperties() {
-  const properties = useLoaderData(); // Loader থেকে আসা ডেটা
+  const properties = useLoaderData(); 
   
   const handleDelete = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete?");
     if (confirmDelete) {
-      // এখানে তুমি delete API কল করতে পারো
+    
+
+
+
       alert("Property deleted successfully!");
     }
   };
@@ -63,7 +66,7 @@ export default function MyProperties() {
                     Delete
                   </button>
                   <Link
-                    to={`/property/${property._id}`}
+                    to={`/view/${property._id}`}
                     className="px-3 py-1 text-sm bg-green-500 text-white rounded-lg hover:bg-green-600"
                   >
                     View
