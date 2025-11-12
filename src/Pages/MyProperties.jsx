@@ -4,19 +4,27 @@ import { Link, useLoaderData } from "react-router";
 
 
 
-
 export default function MyProperties() {
   const properties = useLoaderData(); 
   
-  const handleDelete = () => {
-    const confirmDelete = window.confirm("Are you sure you want to delete?");
-    if (confirmDelete) {
-    
+  const handleDelete = (id) => {
+    fetch(`http://localhost:3000/models/${id}`, {
+  method: "DELETE",
+  headers: {
+    "Content-Type": "application/json",
+   
+  },
+})
+  .then((res) => {
+    if (!res.ok) throw new Error("Failed to delete");
+    return res.json();
+  })
+  .then((data) => console.log("Deleted:", data))
+  .catch((err) => console.error(err));
 
 
 
-      alert("Property deleted successfully!");
-    }
+
   };
 
   return (

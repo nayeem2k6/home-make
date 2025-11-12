@@ -9,6 +9,7 @@ import Home from "../Pages/Home";
 import PropertyDetails from "../Pages/PropertyDetails";
 import MyProperties from "../Pages/MyProperties"
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import MyRatings from "../Pages/MyRatings";
 
 
 const router = createBrowserRouter ([
@@ -50,6 +51,11 @@ const router = createBrowserRouter ([
                 element:<PrivateRoute><MyProperties></MyProperties></PrivateRoute>,
                 loader: () => fetch('http://localhost:3000/users')
             
+            },
+            {
+                path:'/rating',
+                Component:MyRatings,
+                loader: () => fetch('http://localhost:3000/users')
             }
            
         
