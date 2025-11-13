@@ -26,7 +26,7 @@ const router = createBrowserRouter ([
             },
             {
                 path:'/rating',
-                Component:MyRatings,
+                element:<PrivateRoute><MyRatings></MyRatings></PrivateRoute>
             },
             
             {
@@ -54,7 +54,7 @@ const router = createBrowserRouter ([
             },
             {
                 path:'/view/:id',
-                Component:PropertyDetails,
+                element:<PrivateRoute><PropertyDetails></PropertyDetails></PrivateRoute>
             },
             {
                 path:'/my',

@@ -31,7 +31,7 @@ const UpdateProperty = () => {
     try {
       await axios.put(`http://localhost:3000/update/${id}`, property);
       toast.success("Property updated successfully!");
-      navigate(`/my`);
+      navigate(`/view/:id`);
     } catch (err) {
       toast.err("Update failed. Try again!");
     }

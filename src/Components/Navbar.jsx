@@ -146,6 +146,12 @@ export default function Navbar() {
       </div>
 
       <div className="navbar-end">
+      
+      <button>
+        
+      </button>
+
+
         {user ? (
           <div className="relative flex items-center gap-2">
             <div
@@ -185,12 +191,7 @@ export default function Navbar() {
             <NavLink to="/login" className="btn btn-primary">
               Login
             </NavLink>
-            <NavLink
-              to=""
-              className="btn rounded-full h-10 w-10 hidden sm:inline"
-            >
-              <MdDarkMode className="size-6" />
-            </NavLink>
+           
           </>
         )}
       </div>
@@ -198,3 +199,5 @@ export default function Navbar() {
   );
 }
 
+
+   

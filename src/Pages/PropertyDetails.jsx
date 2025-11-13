@@ -70,18 +70,6 @@ const handleSubmit = async (e) => {
 
 
 
-
-
-
-
-  // const handleSubmitReview = () => {
-  //   if (!review.trim()) return;
-  //   const newReview = { user: user?.displayName || "Anonymous", rating, review };
-  //   setReviews([newReview, ...reviews]);
-  //   setRating(5);
-  //   setReview("");
-  // };
-
   if (!property)
     return (
       <div className="flex justify-center items-center h-[60vh] text-lg font-semibold">
