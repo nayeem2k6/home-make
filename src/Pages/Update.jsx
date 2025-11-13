@@ -31,9 +31,9 @@ const UpdateProperty = () => {
     try {
       await axios.put(`http://localhost:3000/update/${id}`, property);
       toast.success("Property updated successfully!");
-      navigate(`/view/:id`);
-    } catch (err) {
-      toast.err("Update failed. Try again!");
+      navigate(`/all`);
+    } catch (error) {
+      toast.error("Update failed. Try again!");
     }
   };
 
@@ -56,7 +56,6 @@ const UpdateProperty = () => {
             </label>
             <input
               type="text"
-              defaultValue={property.name}
               name="propertyName"
               value={property.propertyName || ""}
               onChange={handleChange}
@@ -70,7 +69,6 @@ const UpdateProperty = () => {
             </label>
             <textarea
               name="description"
-              defaultValue={property.description}
               value={property.description || ""}
               onChange={handleChange}
               rows={3}
@@ -85,7 +83,6 @@ const UpdateProperty = () => {
               </label>
               <input
                 type="text"
-                defaultValue={'property.category'}
                 name="category"
                 value={property.category || ""}
                 onChange={handleChange}

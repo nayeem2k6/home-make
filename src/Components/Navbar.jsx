@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import { useAuth } from "../Context/AuthProvider";
 
-import { FaSignOutAlt, FaUserCircle } from "react-icons/fa";
+import {  FaHome, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import { FcHome } from "react-icons/fc";
 import { Link, NavLink } from "react-router";
-import { MdDarkMode } from "react-icons/md";
+
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -56,7 +56,7 @@ export default function Navbar() {
               className={({ isActive }) =>
                 isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
               }
-            >
+            > <FaHome />
               Home
             </NavLink>
             <NavLink
@@ -64,7 +64,7 @@ export default function Navbar() {
               className={({ isActive }) =>
                 isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
               }
-            >
+            > 
               All Properties
             </NavLink>
             <NavLink
@@ -107,7 +107,7 @@ export default function Navbar() {
             className={({ isActive }) =>
               isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
             }
-          >
+          > <FaHome />
             Home
           </NavLink>
           <NavLink
@@ -148,7 +148,7 @@ export default function Navbar() {
       <div className="navbar-end">
       
       <button>
-        
+
       </button>
 
 
