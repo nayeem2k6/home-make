@@ -10,6 +10,7 @@ import PropertyDetails from "../Pages/PropertyDetails";
 import MyProperties from "../Pages/MyProperties"
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyRatings from "../Pages/MyRatings";
+import UpdateProperty from "../Pages/Update";
 
 
 const router = createBrowserRouter ([
@@ -27,6 +28,11 @@ const router = createBrowserRouter ([
             {
                 path:'/login',
                 Component:Login
+            },
+            {
+                path:'/update/:id',
+                Component:UpdateProperty, 
+                loader: ({ params }) => fetch(`http://localhost:3000/users/${params.id}`)
             },
             {
                 path:'/register',
