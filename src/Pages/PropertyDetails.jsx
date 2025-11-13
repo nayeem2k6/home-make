@@ -63,8 +63,8 @@ const handleSubmit = async (e) => {
       const res = await axios.get("http://localhost:3000/review");
       const filtered = res.data.filter((r) => r.propertyId === id);
       setReviews(filtered);
-    } catch (err) {
-      toast.err("Failed to post review");
+    } catch (error) {
+      toast.error("Failed to post review");
     }
   };
 
