@@ -14,7 +14,7 @@ const UpdateProperty = () => {
   // Fetch property data
   useEffect(() => {
   
-    axios.get(`http://localhost:3000/users`)
+    axios.get(`http://home-nest-ten.vercel.app/users`)
       .then((res) => setProperty(res.data))
       .catch((err) => console.error(err));
   }, [id]);
@@ -29,7 +29,7 @@ const UpdateProperty = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/update/${id}`, property);
+      await axios.put(`http://home-nest-ten.vercel.app/update/${id}`, property);
       toast.success("Property updated successfully!");
       navigate(`/all`);
     } catch (error) {

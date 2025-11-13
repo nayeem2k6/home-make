@@ -22,7 +22,7 @@ const router = createBrowserRouter ([
             {
                 path:'/',
                 Component:Home,
-                loader: () => fetch('http://localhost:3000/latest-homes')  
+                loader: () => fetch('http://home-nest-ten.vercel.app/latest-homes')  
             },
             {
                 path:'/rating',
@@ -36,7 +36,7 @@ const router = createBrowserRouter ([
             {
                 path:'/update/:id',
                 Component:UpdateProperty, 
-                loader: ({ params }) => fetch(`http://localhost:3000/users/${params.id}`)
+                loader: ({ params }) => fetch(`http://home-nest-ten.vercel.app/users/${params.id}`)
             },
             {
                 path:'/register',
@@ -50,7 +50,7 @@ const router = createBrowserRouter ([
             {
                 path:'/all',
                 Component:AllProperties,
-                loader: ()=> fetch('http://localhost:3000/Homes')
+                loader: ()=> fetch('http://home-nest-ten.vercel.app/Homes')
             },
             {
                 path:'/view/:id',
@@ -59,7 +59,7 @@ const router = createBrowserRouter ([
             {
                 path:'/my',
                 element:<PrivateRoute><MyProperties></MyProperties></PrivateRoute>,
-                loader: () => fetch('http://localhost:3000/users')
+                loader: () => fetch('http://home-nest-ten.vercel.app/users')
             
             },
            
