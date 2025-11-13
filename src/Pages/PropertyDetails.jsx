@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuth } from "../Context/AuthProvider";
 import { useParams } from "react-router";
+import { toast } from "react-toastify";
 
 export default function PropertyDetails() {
   const { id } = useParams();
@@ -23,13 +24,63 @@ export default function PropertyDetails() {
   }, [id]);
   console.log(property)
 
-  const handleSubmitReview = () => {
-    if (!review.trim()) return;
-    const newReview = { user: user?.displayName || "Anonymous", rating, review };
-    setReviews([newReview, ...reviews]);
-    setRating(5);
-    setReview("");
+
+
+
+   useEffect(() => {
+    axios.get("http://localhost:3000/review").then((res) => {
+      const filtered = res.data.filter((r) => r.propertyId === id);
+      setReviews(filtered);
+    });
+  }, [id]);
+
+
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!user) {
+      toast.error("Please login to submit a review");
+      return;
+    }
+
+    const newReview = {
+      propertyId: id,
+      propertyName: property?.name,
+      propertyImage: property?.image,
+      reviewerName: user?.displayName || "Anonymous",
+      reviewerEmail: user?.email,
+      rating: rating,
+      review: review,
+    };
+
+    try {
+      await axios.post("http://localhost:3000/review-post", newReview);
+      toast.success("Review submitted successfully!");
+      setRating(0);
+      setReview("");
+
+      // Reload reviews
+      const res = await axios.get("http://localhost:3000/review");
+      const filtered = res.data.filter((r) => r.propertyId === id);
+      setReviews(filtered);
+    } catch (err) {
+      toast.err("Failed to post review");
+    }
   };
+
+
+
+
+
+
+
+  // const handleSubmitReview = () => {
+  //   if (!review.trim()) return;
+  //   const newReview = { user: user?.displayName || "Anonymous", rating, review };
+  //   setReviews([newReview, ...reviews]);
+  //   setRating(5);
+  //   setReview("");
+  // };
 
   if (!property)
     return (
@@ -106,8 +157,8 @@ export default function PropertyDetails() {
             rows="3"
           />
 
-          <button
-            onClick={handleSubmitReview}
+          <button Link to={'/rating'}
+            onClick={handleSubmit}
             className="bg-blue-600 text-white px-6 py-2 rounded-lg mt-3 hover:bg-blue-700 transition-all duration-200 w-full sm:w-auto"
           >
             Submit Review

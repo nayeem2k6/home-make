@@ -195,7 +195,7 @@ const Home = () => {
           Join thousands of happy users and start your journey with HomeNest today.
         </p>
         <Link
-          to="/properties"
+          to="/all"
           className="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-100 transition"
         >
           Browse Properties

@@ -9,8 +9,8 @@ import Home from "../Pages/Home";
 import PropertyDetails from "../Pages/PropertyDetails";
 import MyProperties from "../Pages/MyProperties"
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
-import MyRatings from "../Pages/MyRatings";
 import UpdateProperty from "../Pages/Update";
+import MyRatings from "../Pages/MyRatings";
 
 
 const router = createBrowserRouter ([
@@ -23,6 +23,10 @@ const router = createBrowserRouter ([
                 path:'/',
                 Component:Home,
                 loader: () => fetch('http://localhost:3000/latest-homes')  
+            },
+            {
+                path:'/rating',
+                Component:MyRatings,
             },
             
             {
@@ -58,11 +62,6 @@ const router = createBrowserRouter ([
                 loader: () => fetch('http://localhost:3000/users')
             
             },
-            {
-                path:'/rating',
-                Component:MyRatings,
-                loader: () => fetch('http://localhost:3000/users')
-            }
            
         
            ],
