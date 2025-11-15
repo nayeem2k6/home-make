@@ -1,12 +1,9 @@
-
-
 import React, { useState } from "react";
 import { useAuth } from "../Context/AuthProvider";
 
-import {  FaHome, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
+import { FaHome, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import { FcHome } from "react-icons/fc";
 import { Link, NavLink } from "react-router";
-
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -51,46 +48,74 @@ export default function Navbar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[999] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
-              }
-            > <FaHome />
-              Home
-            </NavLink>
-            <NavLink
-              to="/all"
-              className={({ isActive }) =>
-                isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
-              }
-            > 
-              All Properties
-            </NavLink>
-            <NavLink
-              to="/Properties"
-              className={({ isActive }) =>
-                isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
-              }
-            >
-              Add Properties
-            </NavLink>
-            <NavLink
-              to="/my"
-              className={({ isActive }) =>
-                isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
-              }
-            >
-              My Properties
-            </NavLink>
-            <NavLink
-              to="/rating"
-              className={({ isActive }) =>
-                isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
-              }
-            >
-              My Ratings
-            </NavLink>
+            {user ? (
+              <>
+                {" "}
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                  }
+                >
+                  {" "}
+                  <FaHome />
+                  Home
+                </NavLink>
+                <NavLink
+                  to="/all"
+                  className={({ isActive }) =>
+                    isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                  }
+                >
+                  All Properties
+                </NavLink>
+                <NavLink
+                  to="/Properties"
+                  className={({ isActive }) =>
+                    isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                  }
+                >
+                  Add Properties
+                </NavLink>
+                <NavLink
+                  to="/my"
+                  className={({ isActive }) =>
+                    isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                  }
+                >
+                  My Properties
+                </NavLink>
+                <NavLink
+                  to="/rating"
+                  className={({ isActive }) =>
+                    isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                  }
+                >
+                  My Ratings
+                </NavLink>
+              </>
+            ) : (
+              <>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                  }
+                >
+                  {" "}
+                  <FaHome />
+                  Home
+                </NavLink>
+                <NavLink
+                  to="/all"
+                  className={({ isActive }) =>
+                    isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                  }
+                >
+                  All Properties
+                </NavLink>
+              </>
+            )}
           </ul>
         </div>
 
@@ -102,55 +127,79 @@ export default function Navbar() {
 
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
-            }
-          > <FaHome />
-            Home
-          </NavLink>
-          <NavLink
-            to="/all"
-            className={({ isActive }) =>
-              isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
-            }
-          >
-            All Properties
-          </NavLink>
-          <NavLink
-            to="/Properties"
-            className={({ isActive }) =>
-              isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
-            }
-          >
-            Add Properties
-          </NavLink>
-          <NavLink
-            to="/my"
-            className={({ isActive }) =>
-              isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
-            }
-          >
-            My Properties
-          </NavLink>
-          <NavLink
-            to="/rating"
-            className={({ isActive }) =>
-              isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
-            }
-          >
-            My Ratings
-          </NavLink>
+          {user ? (
+            <>
+              {" "}
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                }
+              >
+                {" "}
+                <FaHome />
+                Home
+              </NavLink>
+              <NavLink
+                to="/all"
+                className={({ isActive }) =>
+                  isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                }
+              >
+                All Properties
+              </NavLink>
+              <NavLink
+                to="/Properties"
+                className={({ isActive }) =>
+                  isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                }
+              >
+                Add Properties
+              </NavLink>
+              <NavLink
+                to="/my"
+                className={({ isActive }) =>
+                  isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                }
+              >
+                My Properties
+              </NavLink>
+              <NavLink
+                to="/rating"
+                className={({ isActive }) =>
+                  isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                }
+              >
+                My Ratings
+              </NavLink>
+            </>
+          ) : (
+            <>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                }
+              >
+                {" "}
+                <FaHome />
+                Home
+              </NavLink>
+              <NavLink
+                to="/all"
+                className={({ isActive }) =>
+                  isActive ? "btn btn-ghost btn-active" : "btn btn-ghost"
+                }
+              >
+                All Properties
+              </NavLink>
+            </>
+          )}
         </ul>
       </div>
 
       <div className="navbar-end">
-      
-      <button>
-
-      </button>
-
+        <button></button>
 
         {user ? (
           <div className="relative flex items-center gap-2">
@@ -168,7 +217,7 @@ export default function Navbar() {
                 <FaUserCircle size={32} className="text-blue-600" />
               )}
             </div>
-            
+
             {open && (
               <div className="absolute right-0 top-12 w-56 bg-white shadow-lg rounded-lg p-3 z-[1000]">
                 <p className="font-semibold text-gray-800">
@@ -191,13 +240,9 @@ export default function Navbar() {
             <NavLink to="/login" className="btn btn-primary">
               Login
             </NavLink>
-           
           </>
         )}
       </div>
     </div>
   );
 }
-
-
-   

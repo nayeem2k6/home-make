@@ -16,7 +16,7 @@ export default function PropertyDetails() {
 
   useEffect(() => {
     const fetchProperty = async () => {
-      const res = await axios.get(`http://home-nest-ten.vercel.app/Homes/${id}`);
+      const res = await axios.get(`https://home-nest-ten.vercel.app/Homes/${id}`);
 
       setProperty(res.data.result);
     };
@@ -28,7 +28,7 @@ export default function PropertyDetails() {
 
 
    useEffect(() => {
-    axios.get("http://home-nest-ten.vercel.app/review").then((res) => {
+    axios.get("https://home-nest-ten.vercel.app/review").then((res) => {
       const filtered = res.data.filter((r) => r.propertyId === id);
       setReviews(filtered);
     });
@@ -54,13 +54,13 @@ const handleSubmit = async (e) => {
     };
 
     try {
-      await axios.post("http://home-nest-ten.vercel.app/review-post", newReview);
+      await axios.post("https://home-nest-ten.vercel.app/review-post", newReview);
       toast.success("Review submitted successfully!");
       setRating(0);
       setReview("");
 
       // Reload reviews
-      const res = await axios.get("http://home-nest-ten.vercel.app/review");
+      const res = await axios.get("https://home-nest-ten.vercel.app/review");
       const filtered = res.data.filter((r) => r.propertyId === id);
       setReviews(filtered);
     } catch (error) {

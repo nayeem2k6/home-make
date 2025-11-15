@@ -22,7 +22,7 @@ const AddProperty = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://home-nest-ten.vercel.app/Homes", {
+      await axios.post("https://home-nest-ten.vercel.app/Homes", {
         ...formData,
         userEmail: user.email,
         userName: user.displayName,

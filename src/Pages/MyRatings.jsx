@@ -11,7 +11,7 @@ const MyRatings = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get("http://home-nest-ten.vercel.app/review").then((res) => {
+      axios.get("https://home-nest-ten.vercel.app/review").then((res) => {
         const filtered = res.data.filter((r) => r.reviewerEmail === user.email);
         setMyReviews(filtered);
       });
