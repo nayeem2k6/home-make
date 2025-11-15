@@ -29,7 +29,7 @@ const Home = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-3">
               Welcome to HomeNest
             </h2>
-            <p className="text-base md:text-lg">Explore the world of amazing Home</p>
+            <p className="text-gray md:text-lg">Explore the world of amazing Home</p>
           </div>
           <div className="absolute left-4 right-4 top-1/2 flex justify-between transform -translate-y-1/2">
             <a href="#slide4" className="btn btn-circle">❮</a>
@@ -48,7 +48,7 @@ const Home = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-3">
                New HomeNest Make
             </h2>
-            <p className="text-base md:text-lg">Find Your Dream Home</p>
+            <p className="text-gray md:text-lg">Find Your Dream Home</p>
           </div>
           <div className="absolute left-4 right-4 top-1/2 flex justify-between transform -translate-y-1/2">
             <a href="#slide1" className="btn btn-circle">❮</a>
@@ -67,7 +67,7 @@ const Home = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-3">
               Dreem for Everyone
             </h2>
-            <p className="text-base md:text-lg">Buy, Sell or Rent Easily</p>
+            <p className="text-gray md:text-lg">Buy, Sell or Rent Easily</p>
           </div>
           <div className="absolute left-4 right-4 top-1/2 flex justify-between transform -translate-y-1/2">
             <a href="#slide2" className="btn btn-circle">❮</a>
@@ -86,7 +86,7 @@ const Home = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-3">
                Your Favorites
             </h2>
-            <p className="text-base md:text-lg">Your Nest Awaits at HomeNest</p>
+            <p className="text-gray md:text-lg">Your Nest Awaits at HomeNest</p>
           </div>
           <div className="absolute left-4 right-4 top-1/2 flex justify-between transform -translate-y-1/2">
             <a href="#slide3" className="btn btn-circle">❮</a>

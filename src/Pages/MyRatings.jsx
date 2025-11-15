@@ -27,7 +27,7 @@ const MyRatings = () => {
       ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {myReviews.map((r, idx) => (
-            <div key={idx} className="border rounded-xl shadow-md overflow-hidden bg-white">
+            <div key={idx} className="border rounded-xl shadow-md overflow-hidden bg-base">
               <img src={r.propertyImage} alt="" className="w-full h-40 object-cover" />
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-1">{r.propertyName}</h2>
@@ -36,11 +36,11 @@ const MyRatings = () => {
                     <FaStar key={i} className="text-yellow-500" />
                   ))}
                 </div>
-                <p className="text-gray-700 text-sm mb-2">{r.review}</p>
-                <p className="text-sm text-gray-500">
+                <p className="text-gray text-sm mb-2">{r.review}</p>
+                <p className="text-sm bg-base">
                   <strong>By:</strong> {r.reviewerName}
                 </p>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm bg-base">
                   <strong>Date:</strong> {new Date(r.postedAt).toLocaleDateString()}
                 </p>
               </div>

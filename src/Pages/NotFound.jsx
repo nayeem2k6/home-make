@@ -23,7 +23,7 @@ export default function NotFound() {
       </p>
 
       
-      <p className="text-gray-500 max-w-md mb-8 text-sm sm:text-base">
+      <p className="text-gray-500 max-w-md mb-8 text-sm sm:text-gray">
         The page you are looking for might have been removed, had its name changed,
         or is temporarily unavailable.
       </p>

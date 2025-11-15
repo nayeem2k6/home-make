@@ -94,7 +94,7 @@ const handleSubmit = async (e) => {
         />
 
         {/* Details */}
-        <div className="space-y-3 text-gray-700">
+        <div className="space-y-3 text-gray">
           <p>
             <strong>Category:</strong> {property.category}
           </p>
@@ -121,13 +121,13 @@ const handleSubmit = async (e) => {
 
       {/* Ratings & Reviews Section */}
       <div className="mt-10 border-t pt-6">
-        <h3 className="text-2xl font-bold mb-4 text-gray-800">
+        <h3 className="text-2xl font-bold mb-4 text-gray">
           Ratings & Reviews
         </h3>
 
         {/* Review Input Box */}
-        <div className="bg-gray-50 p-4 rounded-xl shadow-sm">
-          <label className="font-medium text-gray-700">Rating:</label>
+        <div className="bg-base p-4 rounded-xl shadow-sm">
+          <label className="font-medium tex-base">Rating:</label>
           <input
             type="number"
             min="1"
@@ -161,13 +161,13 @@ const handleSubmit = async (e) => {
           {reviews.map((r, idx) => (
             <div
               key={idx}
-              className="border rounded-lg p-4 shadow-sm bg-white hover:shadow-md transition"
+              className="border rounded-lg p-4 shadow-sm bg-base hover:shadow-md transition"
             >
               <p className="font-semibold text-blue-700">
                 {r.user} rated{" "}
                 <span className="text-yellow-500 font-bold">{r.rating}/5</span>
               </p>
-              <p className="text-gray-600 mt-1">{r.review}</p>
+              <p className="text-bg-base mt-1">{r.review}</p>
             </div>
           ))}
         </div>

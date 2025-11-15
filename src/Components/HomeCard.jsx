@@ -8,7 +8,7 @@ import { Link } from 'react-router';
 const HomeCard = ({ model }) => {
   return (
     <div className="">
-      <article className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col">
+      <article className="bg-base rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col">
         {/* Image Section */}
         <div className="relative w-full h-48 sm:h-56 md:h-60 overflow-hidden">
           <img
@@ -24,22 +24,33 @@ const HomeCard = ({ model }) => {
         {/* Card Body */}
         <div className="p-5 flex flex-col justify-between flex-1">
           <div>
-            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 line-clamp-2 mb-2">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray line-clamp-2 mb-2">
               {model.name}
             </h3>
+             <div>
+            <label className="block text-grayfont-semibold mb-2">
+              Description
+            </label>
+            <textarea
+              name="description"
+              value={model.description || ""}
+              rows={3}
+              className="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-indigo-400 outline-none"
+            />
+          </div>
 
-            <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+            <p className="text-gray text-sm mb-3 line-clamp-2">
               📍 Location: {model.location}
             </p>
 
-            <p className="text-gray-800 font-semibold text-base sm:text-lg">
+            <p className="text-gray font-semibold text-gray sm:text-lg">
               💰 {model.price} BDT
             </p>
           </div>
 
           {/* Footer */}
           <div className="mt-4 flex items-center justify-between flex-wrap gap-2">
-            <div className="text-xs sm:text-sm text-gray-500">
+            <div className="text-xs sm:text-sm text-gray">
               Posted by{' '}
               <span className="font-semibold text-indigo-600">
                 {model.userName}

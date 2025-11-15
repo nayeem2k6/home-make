@@ -37,10 +37,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        Component: UpdateProperty,
+        element:<PrivateRoute><UpdateProperty></UpdateProperty></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`https://home-nest-ten.vercel.app/users/${params.id}`),
+        fetch(`https://home-nest-ten.vercel.app/users/${params.id}`),
       },
+      
       {
         path: "/register",
         Component: Register,

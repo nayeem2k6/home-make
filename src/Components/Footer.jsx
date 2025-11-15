@@ -19,7 +19,7 @@ const Footer = () => {
             <FaHome className="text-blue-500 text-3xl" />
             <h2 className="text-2xl font-bold text-white">HomeNest</h2>
           </div>
-          <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+          <p className="text-gray-400 leading-relaxed text-sm sm:text-gray">
             Your trusted real estate partner. Find, rent, or buy your dream
             property with ease.
           </p>
@@ -30,9 +30,9 @@ const Footer = () => {
           <h3 className="text-white font-semibold text-lg sm:text-xl mb-4">
             Contact Us
           </h3>
-          <p className="text-sm sm:text-base">📍 Dhaka, Bangladesh</p>
-          <p className="text-sm sm:text-base">📞 +880 1234 567 890</p>
-          <p className="text-sm sm:text-base">📧 info@homenest.com</p>
+          <p className="text-sm sm:text-gray">📍 Dhaka, Bangladesh</p>
+          <p className="text-sm sm:text-gray">📞 +880 1234 567 890</p>
+          <p className="text-sm sm:text-gray">📧 info@homenest.com</p>
         </div>
 
         {/* ======= Links Section ======= */}
@@ -40,7 +40,7 @@ const Footer = () => {
           <h3 className="text-white font-semibold text-lg sm:text-xl mb-4">
             Quick Links
           </h3>
-          <ul className="space-y-2 text-sm sm:text-base">
+          <ul className="space-y-2 text-sm sm:text-gray">
             <li>
               <a
                 href="/terms"
@@ -100,7 +100,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <p className="text-gray-500 text-sm sm:text-base">
+        <p className="text-gray-500 text-sm sm:text-gray">
           © {new Date().getFullYear()} HomeNest. All rights reserved.
         </p>
       </div>

@@ -29,7 +29,7 @@ export default function MyProperties() {
           },
         });
 
-        navigate("/");
+        navigate("/my");
         Swal.fire({
           title: "Deleted!",
           text: "Your file has been deleted.",
@@ -40,8 +40,8 @@ export default function MyProperties() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-5">
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
+    <div className="min-h-screen bg-base py-10 px-5">
+      <h1 className="text-3xl font-extrabold text-center mb-8 text-base">
         My Properties
       </h1>
 
@@ -52,7 +52,7 @@ export default function MyProperties() {
           {filteredProperties.map((property) => (
             <div
               key={property._id}
-              className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
+              className="bg-base rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
             >
               <img
                 src={property.image}
@@ -60,13 +60,13 @@ export default function MyProperties() {
                 className="w-full h-48 object-cover"
               />
               <div className="p-5 space-y-2">
-                <h2 className="text-xl font-semibold text-gray-800">
+                <h2 className="text-xl font-semibold text-base">
                   {property.name}
                 </h2>
-                <p className="text-gray-600 text-sm">{property.category}</p>
-                <p className="text-gray-700 font-bold">৳ {property.price}</p>
-                <p className="text-gray-500 text-sm">{property.location}</p>
-                <p className="text-gray-400 text-xs">
+                <p className="text-base text-sm">{property.category}</p>
+                <p className="text-base font-bold">৳ {property.price}</p>
+                <p className="text-base text-sm">{property.location}</p>
+                <p className="text-base text-xs">
                   Posted:{" "}
                   {new Date(
                     property.postedAt || Date.now()

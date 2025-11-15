@@ -42,15 +42,15 @@ const AddProperty = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-4">
-      <div className="w-full max-w-xl bg-white shadow-2xl rounded-2xl p-8 sm:p-10 border border-gray-100">
+    <div className="min-h-screen bg-base flex items-center justify-center p-4">
+      <div className="w-full max-w-xl bg-base shadow-2xl rounded-2xl p-8 sm:p-10 border border-gray-100">
         <h2 className="text-3xl font-extrabold text-center text-blue-600 mb-6">
           🏡 Add New Property
         </h2>
 
         <form className="space-y-5" onSubmit={handleSubmit}>
           <div>
-            <label className="block font-medium text-gray-700 mb-1">
+            <label className="block font-medium text-base mb-1">
               Property Name
             </label>
             <input
@@ -65,7 +65,7 @@ const AddProperty = () => {
           </div>
 
           <div>
-            <label className="block font-medium text-gray-700 mb-1">
+            <label className="block font-medium text-base mb-1">
               Description
             </label>
             <textarea
@@ -81,7 +81,7 @@ const AddProperty = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block font-medium text-gray-700 mb-1">
+              <label className="block font-medium text-base mb-1">
                 Category
               </label>
               <select
@@ -98,7 +98,7 @@ const AddProperty = () => {
             </div>
 
             <div>
-              <label className="block font-medium text-gray-700 mb-1">
+              <label className="block font-medium text-base mb-1">
                 Price
               </label>
               <input
@@ -114,7 +114,7 @@ const AddProperty = () => {
           </div>
 
           <div>
-            <label className="block font-medium text-gray-700 mb-1">
+            <label className="block font-medium text-base mb-1">
               Location
             </label>
             <input
@@ -129,7 +129,7 @@ const AddProperty = () => {
           </div>
 
           <div>
-            <label className="block font-medium text-gray-700 mb-1">
+            <label className="block font-medium text-base mb-1">
               Image URL
             </label>
             <input
@@ -141,6 +141,32 @@ const AddProperty = () => {
               onChange={handleChange}
               required
             />
+          </div>
+
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            <div>
+              <label className="block text-base font-semibold mb-2">
+                User Name
+              </label>
+              <input
+                type="text"
+                placeholder="Admin User"
+                readOnly
+                className="w-full bg-gray-100 border border-gray-300 rounded-xl px-4 py-2 text-gray-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2">
+                User Email
+              </label>
+              <input
+                type="email"
+                placeholder="Admin01@gmail.com"
+                readOnly
+                className="w-full bg-gray-100 border border-gray-300 rounded-xl px-4 py-2 text-gray-500"
+              />
+            </div>
           </div>
 
           <button

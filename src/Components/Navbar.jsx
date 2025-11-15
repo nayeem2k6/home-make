@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../Context/AuthProvider";
 
 import { FaHome, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import { FcHome } from "react-icons/fc";
 import { Link, NavLink } from "react-router";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
+
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || "light"
+  );
+
+useEffect(() => {
+   const html = document.querySelector('html')
+   html.setAttribute("data-theme", theme)
+   localStorage.setItem("theme", theme);
+},[theme])
+
+const handleTheme = (chacked) => {
+ setTheme(chacked ? "dark" : "light")
+}
 
   const handleLogout = async () => {
     try {
@@ -199,7 +214,13 @@ export default function Navbar() {
       </div>
 
       <div className="navbar-end">
-        <button></button>
+       
+<input 
+onChange={(e) => handleTheme(e.target.checked)}
+type="checkbox"
+className="toggle"
+ />
+
 
         {user ? (
           <div className="relative flex items-center gap-2">

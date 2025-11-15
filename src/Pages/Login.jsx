@@ -40,7 +40,7 @@ export default function Login() {
         <h2 className="text-3xl font-extrabold text-center text-gray-800">
           Welcome Back
         </h2>
-        <p className="text-center text-gray-500 text-sm sm:text-base">
+        <p className="text-center text-gray-500 text-sm sm:text-gray">
           Login to your HomeNest account and continue your fun journey!
         </p>
 

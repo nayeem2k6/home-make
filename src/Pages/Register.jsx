@@ -57,7 +57,7 @@ export default function Register() {
         <h2 className="text-3xl font-extrabold text-center text-gray-800">
           Create Your Account
         </h2>
-        <p className="text-center text-gray-500 text-sm sm:text-base">
+        <p className="text-center text-gray-500 text-sm sm:text-gray">
           Join ToyTopia and explore the world of fun and creativity!
         </p>
 
