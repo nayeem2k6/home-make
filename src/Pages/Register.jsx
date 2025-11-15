@@ -52,13 +52,13 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gradient-to-br from-blue-50 to-amber-50 p-4">
+    <div className="min-h-screen flex justify-center items-center bg-base p-4">
       <div className="w-full max-w-md bg-base-100 shadow-2xl rounded-2xl border border-gray-100 p-6 sm:p-8 space-y-6">
-        <h2 className="text-3xl font-extrabold text-center text-gray-800">
+        <h2 className="text-3xl font-extrabold text-center text-base">
           Create Your Account
         </h2>
-        <p className="text-center text-gray-500 text-sm sm:text-gray">
-          Join ToyTopia and explore the world of fun and creativity!
+        <p className="text-center text-base text-sm sm:text-gray">
+          Join HomeNest and explore the world of fun and creativity!
         </p>
 
         <form onSubmit={handleSubmit} className="grid gap-4">
