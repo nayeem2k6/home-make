@@ -34,7 +34,7 @@ const handleTheme = (chacked) => {
   };
 
   return (
-    <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
+    <div className="navbar bg-base-100  shadow-sm sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <div
@@ -218,7 +218,7 @@ const handleTheme = (chacked) => {
 <input 
 onChange={(e) => handleTheme(e.target.checked)}
 type="checkbox"
-className="toggle"
+className="toggle "
  />
 
 

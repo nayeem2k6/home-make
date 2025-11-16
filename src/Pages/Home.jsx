@@ -118,35 +118,35 @@ const Home = () => {
 
 
 
-       <section className="bg-gradient-to-b from-blue-50 to-white py-20 px-6 md:px-12">
-        <h2 className="text-4xl font-extrabold text-center mb-14 text-gray-800">
+       <section className="bg-base py-20 px-6 md:px-12">
+        <h2 className="text-4xl font-extrabold text-center mb-14 text-base-500">
           💎 Why Choose <span className="text-blue-600">HomeNest?</span>
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
           {/* Card 1 */}
-          <div className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div className="p-8 bg-base rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
             <FaCheckCircle className="text-blue-600 text-5xl mx-auto mb-4" />
             <h3 className="font-bold text-2xl mb-3">Verified Listings</h3>
-            <p className="text-gray-600">
+            <p className="text-base">
               Every property is verified for authenticity and safety before it’s listed.
             </p>
           </div>
 
           {/* Card 2 */}
-          <div className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div className="p-8  rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
             <FaComments className="text-blue-600 text-5xl mx-auto mb-4" />
             <h3 className="font-bold text-2xl mb-3">Easy Communication</h3>
-            <p className="text-gray-600">
+            <p className="text-base">
               Directly connect with property owners and make hassle-free deals.
             </p>
           </div>
 
           {/* Card 3 */}
-          <div className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div className="p-8 bg-base rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
             <FaFilter className="text-blue-600 text-5xl mx-auto mb-4" />
             <h3 className="font-bold text-2xl mb-3">Smart Filtering</h3>
-            <p className="text-gray-600">
+            <p className="text-base">
               Search by location, price, or category to find exactly what you need.
             </p>
           </div>
@@ -154,31 +154,31 @@ const Home = () => {
       </section>
 
       {/* ========== Testimonials Section ========== */}
-      <section className="py-20 px-6 md:px-12 bg-white">
-        <h2 className="text-4xl font-extrabold text-center mb-14 text-gray-800">
+      <section className="py-20 px-6 md:px-12 bg-base">
+        <h2 className="text-4xl font-extrabold text-center mb-14 text-base-500">
           💬 What Our Users Say
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Testimonial 1 */}
-          <div className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
-            <p className="italic text-gray-700 text-lg leading-relaxed">
+          <div className="p-8  rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+            <p className="italic text-base text-lg leading-relaxed">
               “Found my dream apartment in just 2 days! Great experience.”
             </p>
-            <p className="mt-4 font-semibold text-blue-600">– Rakib, Dhaka</p>
+            <p className="mt-4 font-semibold text-blue-600">– NAyEem, Savar-Dhaka</p>
           </div>
 
           {/* Testimonial 2 */}
-          <div className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
-            <p className="italic text-gray-700 text-lg leading-relaxed">
+          <div className="p-8  rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+            <p className="italic text-base text-lg leading-relaxed">
               “User-friendly website and responsive owners. Highly recommended!”
             </p>
             <p className="mt-4 font-semibold text-blue-600">– Maria, Banani</p>
           </div>
 
           {/* Testimonial 3 */}
-          <div className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
-            <p className="italic text-gray-700 text-lg leading-relaxed">
+          <div className="p-8  rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+            <p className="italic text-base text-lg leading-relaxed">
               “It made renting so much simpler. Loved the platform.”
             </p>
             <p className="mt-4 font-semibold text-blue-600">– Sazzad, Mirpur</p>

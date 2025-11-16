@@ -112,7 +112,7 @@ export default function Register() {
           <FcGoogle className="text-xl" /> Continue with Google
         </button>
 
-        <p className="text-center text-sm text-gray-600">
+        <p className="text-center text-sm text-base">
           Already have an account?{" "}
           <Link to="/login" className="link text-primary font-medium">
             Login
