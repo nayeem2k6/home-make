@@ -86,7 +86,7 @@ const AddProperty = () => {
               </label>
               <select
                 name="category"
-                className="w-full border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full border-gray-300 border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
                 value={formData.category}
                 onChange={handleChange}
               >

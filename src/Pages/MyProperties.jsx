@@ -1,16 +1,21 @@
-import { Link, useLoaderData, useNavigate } from "react-router";
+
+
+
+import { Link, useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 import { useAuth } from "../Context/AuthProvider";
+import { useState } from "react";
 
 export default function MyProperties() {
   const { user } = useAuth();
-  const properties = useLoaderData();
-  console.log(properties);
+  const loadedData = useLoaderData();
+
+  const [properties, setProperties] = useState(loadedData);
 
   const filteredProperties = properties.filter(
     (item) => item.userEmail === user.email
   );
-  const navigate = useNavigate();
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -24,17 +29,16 @@ export default function MyProperties() {
       if (result.isConfirmed) {
         fetch(`https://home-nest-ten.vercel.app/models/${id}`, {
           method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        })
+          .then((res) => res.json())
+          .then(() => {
+          
+            setProperties((prev) =>
+              prev.filter((item) => item._id !== id)
+            );
 
-        navigate("/my");
-        Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success",
-        });
+            Swal.fire("Deleted!", "Your property has been deleted.", "success");
+          });
       }
     });
   };
@@ -80,12 +84,14 @@ export default function MyProperties() {
                   >
                     Update
                   </Link>
+
                   <button
                     onClick={() => handleDelete(property._id)}
                     className="px-3 py-1 text-sm bg-red-500 text-white rounded-lg hover:bg-red-600"
                   >
                     Delete
                   </button>
+
                   <Link
                     to={`/view/${property._id}`}
                     className="px-3 py-1 text-sm bg-green-500 text-white rounded-lg hover:bg-green-600"
